@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>열혈프로젝트</title>
+    <link rel="shortcut icon" href="punch.ico"/>
+    <link rel="icon" href="punch.ico"/>
+    <title></title>
+    <style>
+      table.main {
+        border-style: none;
+        height: 250px;
+        border-color: gold;
+        border-top: 3px solid;
+        border-collapse: collapse;
+        margin:auto;
+        font-weight:bold;
+      }
+      table.main, table.main tr, table.main td {
+        vertical-align: middle;
+        width: 100%;
+        height: 0px;
+        padding: 3px;
+        border-color: gold;
+      }
+      table.main2 {
+        margin-top: auto;
+        margin-left: 200px;
+        line-height:300%;
+      }
+      a {
+        text-decoration: none;
+        transition: 1s;
+        padding: 0 .3em;
+        background-position: 0 0;
+        background-size: 200% auto;
+        transition: .3s;
+        text-decoration: none;
+        color: gray;
+        font-size: 15px;
+      }
+      body {
+        font-family: '나눔스퀘어라운드 Bold', sans-serif;
+      }
+      #nav {
+          position:relative;
+          width:880px;
+          margin:0 auto;
+      }
+      ul#navigation {
+          margin:0px auto;
+          position:relative;
+          float:left;
+          border-right none;
+      }
+      ul#navigation li {
+          display:inline;
+          font-size:12px;
+          font-weight:bold;
+          margin:0;
+          padding:0;
+          float:left;
+          position:relative;
+          border-top:none;
+          border-bottom:4px solid gold;
+      }
+      ul#navigation li a {
+          padding:7px 25px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:inline-block;
+          border-right:none;
+          border-left:none;
+          border-top:none;
+          background: none;
+      }
+      ul#navigation li a:hover {
+          background:#f8f8f8;
+          color:black;
+      }
+      ul#navigation li a.first {
+          border-left: 0 none;
+      }
+      ul#navigation li a.last {
+          border-right: 0 none;
+      }
+      ul#navigation li:hover > a {
+          background:gold;
+      }
+      ul#navigation li:hover > ul
+      {
+      /*these 2 styles are very important,
+      being the ones which make the drop-down to appear on hover */
+          visibility:visible;
+          opacity:1;
+      }
+
+      ul#navigation ul, ul#navigation ul li ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      /*the next 2 styles are very important,
+      being the ones which make the drop-down to stay hidden */
+          visibility:hidden;
+          opacity:0;
+          position: absolute;
+          background:#f8f8f8;
+          box-shadow:1px 1px 3px #ccc;
+      /* css3 transitions for smooth hover effect */
+      }
+      ul#navigation ul {
+          left: 100px;
+      }
+      ul#navigation ul li ul {
+          left: 300px; /* strong related to width:180px; from above */
+      }
+      ul#navigation ul li {
+          clear:both;
+          border:0 none;
+          border-bottom:2px solid gold;
+      }
+      ul#navigation ul li a {
+          background:none;
+          padding:7px 15px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:block;
+          border:0 none;
+          float:left;
+      }
+      a, a > span {
+        position: relative;
+        color: slategray;
+        text-decoration: none;
+        line-height: 24px;
+      }
+      a:before, a:after, a > span:before, a > span:after {
+        content: '';
+        position: absolute;
+        transition: transform .5s ease;
+      }
+      .effect:before {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background: white;
+        transform: scaleX(0);
+      }
+      .effect:hover:before {
+        transform: scaleX(1);
+      }
+      .highlight {
+        background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);
+        font-weight: bold;
+      }
+      .underline {
+        text-decoration: underline;
+        text-decoration-color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="main">
+      <tr>
+        <td bgcolor="gold"><center><a href="main.html"><img src="로고4.png"
+          style="width:250px; height:230px;"><br><a href="mailto:hunjaeori98@gmail.com" class="effect">
+            <img src="gmail.png" style="width:15px; height:15px;"> yeolhyeol@gmail.com</a></a></center></td>
+      </tr>
+    </table>
+    <nav id="nav">
+      <ul id="navigation">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="members.html">MEMBERS</a></li>
+        <li><a href="activity.html">ACTIVITY &raquo;</a>
+          <ul>
+            <li><a href="activity.html">&nbsp;&nbsp;&nbsp;&nbsp;APP&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="web.html">&nbsp;&nbsp;&nbsp;WEB&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="arduino.html">ARDUINO</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="8.html">CALENDAR</a></li>
+        <li><a href="freetalk.html">FREE TALK</a></li>
+        <li><a href="q&a.html"><span style="color:black">Q & A</span></a></li>
+      </ul>
+    </nav>
+    <br><br><br><br><br><br><br><br>
+    <center>
+      <img src="conversation.png" style="width:100px; height:100px;"><h2>자주 묻는 질문</h2>
+    </center><br><br>
+    <table class="main2">
+      <tr>
+        <td style="font-size:25px;"><img src="checked.png" style="width:50px; height:50px;"><span class="highlight">신입기수 모집은 언제 하나요?</span></td>
+      </tr>
+      <tr>
+        <td><h4>신입기수 모집은 6월초에 이루어집니다.
+          6월 중순에는 본인이 원하는 프로젝트를 선택한 뒤 Team-up결과가 나오게 되고,<br>본격적인 활동은
+          종강한 후에 바로 시작하게 됩니다.</h4><br></td>
+      </tr>
+      <tr>
+        <td style="font-size:25px;"><img src="checked.png" style="width:50px; height:50px;"><span class="highlight">활동 중간에 탈퇴할 수 있나요?</span></td>
+      </tr>
+      <tr>
+        <td><h4>열혈프로젝트는 최소 2학기 이상 활동 가능한 분들을 뽑습니다. <br>하지만 탈퇴가 불가피한 상황이라면, 합격자 발표 후부터 Team-up이 이루어지기 전까지만 가능합니다.
+          <br>단, 한 번 탈퇴하신 후에 재가입은 불가능하니 탈퇴는 신중하게 결정해주시기 바랍니다.</h4><br></td>
+      </tr>
+      <tr>
+        <td style="font-size:25px;"><img src="checked.png" style="width:50px; height:50px;"><span class="highlight">앱 프로젝트를 선택하였는데 웹 프로젝트로 바꿀 수 있나요?</span></td>
+      </tr>
+      <tr>
+        <td><h4>각자 원하는 프로젝트를 선택한 후 일주일동안 Team-up이 이루어집니다. <br>이 기간 안에는 변경이 가능하지만,
+          Team-up이 이루어지고 난 이후에는 프로젝트를 변경하실 수 없습니다.</h4><br></td>
+      </tr>
+      <tr>
+        <td style="font-size:25px;"><img src="checked.png" style="width:50px; height:50px;"><span class="highlight">학년 제한이 있나요?</span></td>
+      </tr>
+      <tr>
+        <td><h4>열혈프로젝트는 전공생, 비전공생 상관없이 프로젝트에 대한 열정을 가지고 계신 분이라면 누구나 환영합니다!</h4><br></td>
+      </tr>
+      <tr>
+        <td><h4>더 궁금하신 점은 <span style="color:darksalmon;">페이지 상단의 이메일</span>로 문의주시기 바랍니다:)<h4></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>열혈프로젝트</title>
+    <link rel="shortcut icon" href="punch.ico"/>
+    <link rel="icon" href="punch.ico"/>
+    <title></title>
+    <style>
+      table.main {
+        border-style: none;
+        height: 250px;
+        border-color: gold;
+        border-top: 3px solid;
+        border-collapse: collapse;
+        margin:auto;
+        font-weight:bold;
+      }
+      table.main, table.main tr, table.main td {
+        vertical-align: middle;
+        width: 100%;
+        height: 30px;
+        padding: 3px;
+        border-color: gold;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        transition: 1s;
+        padding: 0 .3em;
+        background-position: 0 0;
+        background-size: 200% auto;
+        transition: .3s;
+        text-decoration: none;
+        color: gray;
+        font-size: 15px;
+      }
+      body {
+        font-family: '나눔스퀘어라운드 Bold', sans-serif;
+      }
+      #nav {
+          position:relative;
+          width:880px;
+          margin:0 auto;
+      }
+      ul#navigation {
+          margin:0px auto;
+          position:relative;
+          float:left;
+          border-right none;
+      }
+      ul#navigation li {
+          display:inline;
+          font-size:12px;
+          font-weight:bold;
+          margin:0;
+          padding:0;
+          float:left;
+          position:relative;
+          border-top:none;
+          border-bottom:4px solid gold;
+      }
+      ul#navigation li a {
+          padding:7px 25px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:inline-block;
+          border-right:none;
+          border-left:none;
+          border-top:none;
+          background: none;
+      }
+      ul#navigation li a:hover {
+          background:#f8f8f8;
+          color:black;
+      }
+      ul#navigation li a.first {
+          border-left: 0 none;
+      }
+      ul#navigation li a.last {
+          border-right: 0 none;
+      }
+      ul#navigation li:hover > a {
+          background:gold;
+      }
+      ul#navigation li:hover > ul
+      {
+      /*these 2 styles are very important,
+      being the ones which make the drop-down to appear on hover */
+          visibility:visible;
+          opacity:1;
+      }
+
+      ul#navigation ul, ul#navigation ul li ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      /*the next 2 styles are very important,
+      being the ones which make the drop-down to stay hidden */
+          visibility:hidden;
+          opacity:0;
+          position: absolute;
+          background:#f8f8f8;
+          box-shadow:1px 1px 3px #ccc;
+      /* css3 transitions for smooth hover effect */
+      }
+      ul#navigation ul {
+          left: 100px;
+      }
+      ul#navigation ul li ul {
+          left: 300px; /* strong related to width:180px; from above */
+      }
+      ul#navigation ul li {
+          clear:both;
+          border:0 none;
+          border-bottom:2px solid gold;
+      }
+      ul#navigation ul li a {
+          background:none;
+          padding:7px 15px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:block;
+          border:0 none;
+          float:left;
+      }
+      a, a > span {
+        position: relative;
+        color: slategray;
+        text-decoration: none;
+        line-height: 24px;
+      }
+      a:before, a:after, a > span:before, a > span:after {
+        content: '';
+        position: absolute;
+        transition: transform .5s ease;
+      }
+      .effect:before {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background: white;
+        transform: scaleX(0);
+      }
+      .effect:hover:before {
+        transform: scaleX(1);
+      }
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{font-family:"나눔스퀘어", sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+      .tg th{font-family:"나눔스퀘어", sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+      .tg .tg-kt03{font-family:"나눔스퀘어", serif !important;;border-color:inherit;text-align:center;vertical-align:top}
+      .tg .tg-5vz2{font-size:11px;font-family:"나눔스퀘어", serif !important;;border-color:inherit;text-align:left;vertical-align:bottom}
+    </style>
+  </head>
+  <body>
+    <table class="main">
+      <tr>
+        <td bgcolor="gold"><center><a href="main.html"><img src="로고4.png"
+          style="width:250px; height:230px;"><br><a href="mailto:hunjaeori98@gmail.com" class="effect">
+            <img src="gmail.png" style="width:15px; height:15px;"> yeolhyeol@gmail.com</a></a></center></td>
+      </tr>
+    </table>
+    <nav id="nav">
+      <ul id="navigation">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="members.html">MEMBERS</a></li>
+        <li><a href="activity.html">ACTIVITY &raquo;</a>
+          <ul>
+            <li><a href="activity.html">&nbsp;&nbsp;&nbsp;&nbsp;APP&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="web.html">&nbsp;&nbsp;&nbsp;WEB&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="arduino.html">ARDUINO</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="8.html"><span style="color:black">CALENDAR</span></a></li>
+        <li><a href="freetalk.html">FREE TALK</a></li>
+        <li><a href="q&a.html">Q & A</a></li>
+      </ul>
+    </nav>
+    <br><br><br><br><br><br><br><br><br>
+    <center>
+      <a href="6.html"><img src="left.png"
+        style="width:20px; height:20px;"></a>
+      <font color="black" face="나눔스퀘어" size="6">&nbsp;&nbsp;7&nbsp;&nbsp;</font>
+      <a href="8.html"><img src="right.png"
+        style="width:20px; height:20px;"></a>
+    </center>
+    <br><br><br>
+    <center>
+      <table class="tg">
+  <tr>
+    <th class="tg-kt03">SUN</th>
+    <th class="tg-kt03">MON</th>
+    <th class="tg-kt03">TUE</th>
+    <th class="tg-kt03">WED</th>
+    <th class="tg-kt03">THU</th>
+    <th class="tg-kt03">FRI</th>
+    <th class="tg-kt03">SAT</th>
+  </tr>
+  <tr>
+    <td class="tg-5vz2"></td>
+    <td class="tg-5vz2">1</td>
+    <td class="tg-5vz2">2</td>
+    <td class="tg-5vz2">3</td>
+    <td class="tg-5vz2">4</td>
+    <td class="tg-5vz2">5</td>
+    <td class="tg-5vz2">6</td>
+  </tr>
+  <tr>
+    <td class="tg-5vz2">7</td>
+    <td class="tg-5vz2">8</td>
+    <td class="tg-5vz2">9</td>
+    <td class="tg-5vz2">10</td>
+    <td class="tg-5vz2">11</td>
+    <td class="tg-5vz2">12</td>
+    <td class="tg-5vz2">13</td>
+  </tr>
+  <tr>
+    <td class="tg-5vz2">14</td>
+    <td class="tg-5vz2">15</td>
+    <td class="tg-5vz2">16</td>
+    <td class="tg-5vz2">17</td>
+    <td class="tg-5vz2">18</td>
+    <td class="tg-5vz2">19</td>
+    <td class="tg-5vz2">20</td>
+  </tr>
+  <tr>
+    <td class="tg-5vz2">21</td>
+    <td class="tg-5vz2">22</td>
+    <td class="tg-5vz2">23</td>
+    <td class="tg-5vz2">24</td>
+    <td class="tg-5vz2">25</td>
+    <td class="tg-5vz2">26</td>
+    <td class="tg-5vz2">27</td>
+  </tr>
+  <tr>
+    <td class="tg-5vz2">28</td>
+    <td class="tg-5vz2">29</td>
+    <td class="tg-5vz2">30</td>
+    <td class="tg-5vz2">31</td>
+    <td class="tg-5vz2"></td>
+    <td class="tg-5vz2"></td>
+    <td class="tg-5vz2"></td>
+  </tr>
+</table>
+    </center>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>

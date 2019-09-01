@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>열혈프로젝트</title>
+    <link rel="shortcut icon" href="punch.ico"/>
+    <link rel="icon" href="punch.ico"/>
+    <title></title>
+    <style>
+      table.main {
+        border-color: gold;
+        height: 250px;
+        width: 100%;
+        font-weight:bold;
+      }
+      tr.row:hover {
+        background-color:WhiteSmoke;
+      }
+      body {
+        font-family: '나눔스퀘어라운드 Bold', sans-serif;
+        text-align:center;
+      }
+      table {
+        border-top: 3px solid;
+        border-collapse: collapse;
+        margin:auto;
+        text-align:center;
+      }
+      a {
+        text-decoration: none;
+        color: gray;
+        font-size: 15px;
+        transition: 1s;
+      }
+      a:hover, a:active  {
+        color: DarkSlateGray;
+        opacity: 1s;
+      }
+      table, tr, td {
+        text-align:center;
+        vertical-align: middle;
+        width: 1200px;
+        height: 30px;
+        padding: 3px;
+        border-color: gray;
+      }
+      td {
+        color: gray;
+        font-weight: bold;
+      }
+      .myButton {
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+      	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+      	box-shadow:inset 0px 1px 0px 0px #ffffff;
+      	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+      	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+      	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+      	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+      	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+      	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+      	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+      	background-color:#f9f9f9;
+      	-moz-border-radius:6px;
+      	-webkit-border-radius:6px;
+      	border-radius:6px;
+      	border:1px solid #dcdcdc;
+      	display:inline-block;
+      	cursor:pointer;
+      	color:#666666;
+      	font-family:Arial;
+      	font-size:14px;
+      	font-weight:bold;
+      	padding:8px 15px;
+      	text-decoration:none;
+      	text-shadow:0px 1px 0px #ffffff;
+      }
+      .myButton:hover {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+      	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+      	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+      	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+      	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+      	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+      	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+      	background-color:#e9e9e9;
+      }
+      .myButton:active {
+      	position:relative;
+      	top:1px;
+      }
+      .pagination {
+        display: inline-block;
+      }
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      .pagination a.active {
+        background-color: gold;
+        color: black;
+        border-radius: 5px;
+      }
+      .pagination a:hover:not(.active) {
+        border-radius: 5px;
+      }
+      #nav {
+          position:relative;
+          width:880px;
+          margin:0 auto;
+      }
+      ul#navigation {
+          margin:0px auto;
+          position:relative;
+          float:left;
+          border-right none;
+      }
+      ul#navigation li {
+          display:inline;
+          font-size:12px;
+          font-weight:bold;
+          margin:0;
+          padding:0;
+          float:left;
+          position:relative;
+          border-top:none;
+          border-bottom:4px solid gold;
+      }
+      ul#navigation li a {
+          padding:7px 25px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:inline-block;
+          border-right:none;
+          border-left:none;
+          border-top:none;
+          background: none;
+      }
+      ul#navigation li a:hover {
+          background:#f8f8f8;
+          color:black;
+      }
+      ul#navigation li a.first {
+          border-left: 0 none;
+      }
+      ul#navigation li a.last {
+          border-right: 0 none;
+      }
+      ul#navigation li:hover > a {
+          background:gold;
+      }
+      ul#navigation li:hover > ul
+      {
+      /*these 2 styles are very important,
+      being the ones which make the drop-down to appear on hover */
+          visibility:visible;
+          opacity:1;
+      }
+
+      ul#navigation ul, ul#navigation ul li ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      /*the next 2 styles are very important,
+      being the ones which make the drop-down to stay hidden */
+          visibility:hidden;
+          opacity:0;
+          position: absolute;
+          background:#f8f8f8;
+          box-shadow:1px 1px 3px #ccc;
+      /* css3 transitions for smooth hover effect */
+      }
+      ul#navigation ul {
+          left: 100px;
+      }
+      ul#navigation ul li ul {
+          left: 300px; /* strong related to width:180px; from above */
+      }
+      ul#navigation ul li {
+          clear:both;
+          border:0 none;
+          border-bottom:2px solid gold;
+      }
+      ul#navigation ul li a {
+          background:none;
+          padding:7px 15px;
+          color:gray;
+          text-shadow:1px 1px 0px #fff;
+          text-decoration:none;
+          display:block;
+          border:0 none;
+          float:left;
+      }
+      a, a > span {
+        position: relative;
+        color: slategray;
+        text-decoration: none;
+        line-height: 24px;
+      }
+      a:before, a:after, a > span:before, a > span:after {
+        content: '';
+        position: absolute;
+        transition: transform .5s ease;
+      }
+      .effect:before {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background: white;
+        transform: scaleX(0);
+      }
+      .effect:hover:before {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body>
+    <table class="main">
+      <tr>
+        <td bgcolor="gold"><center><a href="main.html"><img src="로고4.png"
+          style="width:250px; height:230px;"><br><a href="mailto:hunjaeori98@gmail.com" class="effect">
+            <img src="gmail.png" style="width:15px; height:15px;"> yeolhyeol@gmail.com</a></a></center></td>
+      </tr>
+    </table>
+    <nav id="nav">
+      <ul id="navigation">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="members.html">MEMBERS</a></li>
+        <li><a href="activity.html">ACTIVITY &raquo;</a>
+          <ul>
+            <li><a href="activity.html">&nbsp;&nbsp;&nbsp;&nbsp;APP&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="web.html">&nbsp;&nbsp;&nbsp;WEB&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="arduino.html">ARDUINO</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html"><span style="color:black">NOTICE</span></a></li>
+        <li><a href="8.html">CALENDAR</a></li>
+        <li><a href="freetalk.html">FREE TALK</a></li>
+        <li><a href="q&a.html">Q & A</a></li>
+      </ul>
+    </nav>
+    <br><br><br><br><br>
+  <div class="left">
+    <h2>공지사항</h2>
+  </div>
+    <table style="font-size:13px" class="table table-hover">
+      <thead>
+        <tr style="background-color:WhiteSmoke">
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>날짜</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row">
+          <td>3</td>
+          <td>아니 오늘 날씨</td>
+          <td>강희원</td>
+          <td>2019.08.01</td>
+          <td>28</td>
+        </tr>
+        <tr class="row">
+          <td>2</td>
+          <td>대박 덥다</td>
+          <td>김예림</td>
+          <td>2019.06.26</td>
+          <td>50</td>
+        </tr>
+        <tr class="row">
+          <td>1</td>
+          <td>여러분 집 밖에 절대 나오지 마세요</td>
+          <td>김예림</td>
+          <td>2019.07.29</td>
+          <td>48</td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br><br>
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
+    </div>
+  </body>
+</html>
